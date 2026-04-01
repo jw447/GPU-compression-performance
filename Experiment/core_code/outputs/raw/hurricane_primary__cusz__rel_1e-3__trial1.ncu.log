@@ -1,0 +1,2 @@
+/home/jwang96/GPU-compression-performance/Experiment/core_code/scripts/../dep/install/cuSZ/bin/cusz: error while loading shared libraries: libcusz.so: cannot open shared object file: No such file or directory
+==ERROR== The application returned an error code (127).

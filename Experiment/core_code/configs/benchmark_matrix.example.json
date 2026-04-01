@@ -40,7 +40,7 @@
     {
       "name": "cusz",
       "enabled": true,
-      "binary": "../deps/install/cuSZ/bin/cusz",
+      "binary": "../dep/install/cuSZ/bin/cusz",
       "modes": [
         "rel"
       ]
@@ -48,7 +48,7 @@
     {
       "name": "cuszp",
       "enabled": true,
-      "binary": "../deps/install/cuSZp/bin/cuSZp",
+      "binary": "../dep/install/cuSZp/bin/cuSZp",
       "encoding_modes": [
         "plain",
         "outlier",
@@ -58,13 +58,13 @@
     {
       "name": "fzgpu",
       "enabled": true,
-      "binary": "../deps/install/FZ-GPU/bin/fz-gpu",
+      "binary": "../dep/install/FZ-GPU/bin/fz-gpu",
       "notes": "FZ-GPU CLI uses positional arguments: input_path dim_x dim_y dim_z error_bound. It currently targets float32 data."
     },
     {
       "name": "zfp",
       "enabled": true,
-      "binary": "../deps/install/zfp/bin/zfp",
+      "binary": "../dep/install/zfp/bin/zfp",
       "execution_policy": "cuda",
       "fixed_rate_values": [
         8,
@@ -75,7 +75,7 @@
     {
       "name": "mgard",
       "enabled": false,
-      "binary": "../deps/install/MGARD/bin/mgard-x",
+      "binary": "../dep/install/MGARD/bin/mgard-x",
       "notes": "Enable after verifying the built executable name and supported CLI."
     }
   ],
