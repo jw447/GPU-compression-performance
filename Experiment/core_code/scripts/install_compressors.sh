@@ -77,6 +77,31 @@ configure_build_install() {
   cmake --install "$build"
 }
 
+patch_cuszp_arches() {
+  local cmake_file="$1/CMakeLists.txt"
+  if [[ ! -f "$cmake_file" ]]; then
+    echo "cuSZp CMakeLists.txt not found at $cmake_file" >&2
+    return 1
+  fi
+
+  python3 - "$cmake_file" "$CUDA_ARCH" <<'PY'
+import pathlib
+import re
+import sys
+
+path = pathlib.Path(sys.argv[1])
+arch = sys.argv[2]
+text = path.read_text()
+pattern = r"set\(CMAKE_CUDA_ARCHITECTURES\s+[^\)]*\)"
+replacement = f"set(CMAKE_CUDA_ARCHITECTURES {arch})"
+new_text, n = re.subn(pattern, replacement, text, count=1)
+if n != 1:
+    raise SystemExit(f"Failed to patch CMAKE_CUDA_ARCHITECTURES in {path}")
+path.write_text(new_text)
+print(f"Patched {path} to use CUDA arch {arch}")
+PY
+}
+
 echo "[1/5] cuSZ"
 clone_or_update https://github.com/szcompressor/cuSZ.git "$SRC_DIR/cuSZ"
 configure_build_install \
@@ -88,6 +113,7 @@ configure_build_install \
 
 echo "[2/5] cuSZp"
 clone_or_update https://github.com/szcompressor/cuSZp.git "$SRC_DIR/cuSZp"
+patch_cuszp_arches "$SRC_DIR/cuSZp"
 configure_build_install \
   "$SRC_DIR/cuSZp" \
   "$PREFIX/build/cuSZp" \
