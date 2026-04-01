@@ -289,7 +289,7 @@
         "id": 14,
         "title": "Implement workstation setup, installation, and benchmark orchestration",
         "description": "Build scripts and configuration for installing GPU compressors, validating execution, and collecting timing plus Nsight Compute results on RTX 6000 Ada.",
-        "status": "in_progress",
+        "status": "done",
         "stage": "experiment",
         "priority": "high",
         "dependencies": [

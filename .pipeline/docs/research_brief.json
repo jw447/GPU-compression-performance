@@ -47,7 +47,7 @@
     "publication": {
       "paper_outline": "Potential paper arc: motivation for online selection of GPU scientific lossy compression, unified roofline methodology, workstation-based empirical characterization, and implications for prediction features. Final narrative deferred until experimental evidence exists.",
       "figures_tables_plan": "Planned figures: hardware roofline with per-kernel points, stacked kernel-time breakdowns, throughput-vs-error-bound curves, achieved-bandwidth vs arithmetic-intensity scatter, occupancy distributions, and dataset sensitivity tables.",
-      "artifact_plan": "Release scripts for installation, dataset manifesting, benchmark orchestration, profiler collection, CSV summaries, and plotting configuration. Include workstation setup notes and exact compressor revisions used.",
+      "artifact_plan": "Release scripts for installation, dataset manifesting, benchmark orchestration, profiler collection, CSV summaries, and plotting configuration. Current local artifacts include Experiment/core_code/scripts/install_compressors.sh, Experiment/core_code/scripts/benchmark_driver.py, Experiment/core_code/configs/benchmark_matrix.example.json, Survey/reports/gpu_lossy_compression_survey.md, and Experiment/analysis/roofline_experiment_plan.md. Include workstation setup notes and exact compressor revisions used.",
       "submission_checklist": [
         "Freeze compressor versions and compiler/toolkit versions",
         "Include hardware specification and clock/power settings",
