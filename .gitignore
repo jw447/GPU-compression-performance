@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.pyc
+Experiment/core_code/third_party/
+Experiment/deps/
+Experiment/analysis/results/
+*.ncu-rep
+*.nsys-rep

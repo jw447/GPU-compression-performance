@@ -1,0 +1,30 @@
+{
+  "instance_id": "GPU-compression-performance_2026-04-01T17-45-30-006Z",
+  "idea_maturity": "",
+  "created_at": "2026-04-01T17:45:30.006Z",
+  "instance": "/Users/jonwang/dr-claw/GPU-compression-performance/instance.json",
+  "category": "",
+  "Survey": {
+    "references": "/Users/jonwang/dr-claw/GPU-compression-performance/Survey/references",
+    "reports": "/Users/jonwang/dr-claw/GPU-compression-performance/Survey/reports"
+  },
+  "Ideation": {
+    "ideas": "/Users/jonwang/dr-claw/GPU-compression-performance/Ideation/ideas",
+    "references": "/Users/jonwang/dr-claw/GPU-compression-performance/Ideation/references"
+  },
+  "Experiment": {
+    "code_references": "/Users/jonwang/dr-claw/GPU-compression-performance/Experiment/code_references",
+    "datasets": "/Users/jonwang/dr-claw/GPU-compression-performance/Experiment/datasets",
+    "core_code": "/Users/jonwang/dr-claw/GPU-compression-performance/Experiment/core_code",
+    "analysis": "/Users/jonwang/dr-claw/GPU-compression-performance/Experiment/analysis"
+  },
+  "Publication": {
+    "paper": "/Users/jonwang/dr-claw/GPU-compression-performance/Publication/paper"
+  },
+  "Promotion": {
+    "homepage": "/Users/jonwang/dr-claw/GPU-compression-performance/Promotion/homepage",
+    "slides": "/Users/jonwang/dr-claw/GPU-compression-performance/Promotion/slides",
+    "audio": "/Users/jonwang/dr-claw/GPU-compression-performance/Promotion/audio",
+    "video": "/Users/jonwang/dr-claw/GPU-compression-performance/Promotion/video"
+  }
+}

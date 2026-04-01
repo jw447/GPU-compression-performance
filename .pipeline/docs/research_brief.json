@@ -1,0 +1,261 @@
+{
+  "schemaVersion": "1.1",
+  "templateId": "agent-generated",
+  "meta": {
+    "title": "Roofline-Guided Performance Characterization of GPU-Based Lossy Scientific Compression",
+    "lead_author": "",
+    "target_venue": "SC or IPDPS",
+    "date": "2026-04-01"
+  },
+  "sections": {
+    "survey": {
+      "literature_scope": "Survey GPU-capable scientific lossy compressors and profiling methods relevant to throughput decomposition, arithmetic intensity, achieved bandwidth, occupancy, and kernel-level roofline positioning. Initial focus is on cuSZ, cuSZp, FZ-GPU, zfp CUDA backend, and MGARD-X/MGARD-GPU as available open-source baselines.",
+      "key_references": [
+        "Jiannan Tian et al. cuSZ: An efficient GPU-based error-bounded lossy compression framework for scientific data. PACT 2020. https://arxiv.org/abs/2007.09625",
+        "Jiannan Tian et al. Optimizing error-bounded lossy compression for scientific data on GPUs. CLUSTER 2021. https://arxiv.org/abs/2105.12912",
+        "Boyuan Zhang et al. FZ-GPU: A Fast and High-Ratio Lossy Compressor for Scientific Computing Applications on GPUs. HPDC 2023. https://arxiv.org/abs/2304.12557",
+        "Jinyang Liu et al. cuSZ-i: High-Ratio scientific lossy compression on GPUs with optimized multi-level interpolation. SC 2024. https://arxiv.org/abs/2312.05492",
+        "Peter Lindstrom. Fixed-Rate Compressed Floating-Point Arrays. IEEE TVCG 2014. https://doi.org/10.1109/TVCG.2014.2346458",
+        "James Diffenderfer et al. Error Analysis of ZFP Compression for Floating-Point Data. SIAM JSC 2019. https://doi.org/10.1137/18M1168832",
+        "Jieyang Chen et al. Accelerating Multigrid-based Hierarchical Scientific Data Refactoring on GPUs. IPDPS 2021. https://arxiv.org/abs/2105.12764",
+        "NVIDIA Nsight Compute Profiling Guide. https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html"
+      ],
+      "synthesis_summary": "The current project is positioned as a measurement-first study. Existing GPU lossy compressors expose different algorithmic structures: multi-kernel prediction plus entropy encoding in cuSZ, fused or partially fused SZ-family execution in cuSZp and FZ-GPU, transform/block-based compression in zfp CUDA, and multigrid hierarchy in MGARD. The first concrete deliverable is a reproducible roofline-oriented benchmark harness on RTX 6000 Ada rather than a finalized modeling paper claim.",
+      "open_gaps": [
+        "There is no project-specific comparison yet of whether end-to-end compression throughput is limited by compute, memory bandwidth, launch structure, or synchronization overhead on Ada-class GPUs.",
+        "Cross-compressor arithmetic intensity and achieved bandwidth are rarely normalized under one measurement protocol.",
+        "The sensitivity of roofline position to dataset smoothness, dimensionality, error bound, and compression mode remains unclear for the target workstation.",
+        "A runtime estimation model for online compressor selection requires kernel and workload features that are not yet collected."
+      ]
+    },
+    "ideation": {
+      "research_goal": "Determine whether a roofline-driven characterization of GPU-based scientific lossy compressors on RTX 6000 Ada is strong enough to motivate a later predictive runtime-selection model.",
+      "problem_framing": "Instead of committing to a final hypothesis now, the project will first establish a disciplined experimental basis: install representative GPU compressors, run them on climate/scientific datasets, and map end-to-end as well as kernel-level execution to roofline and utilization metrics.",
+      "evidence_plan": "Use public papers and official repositories to define the baseline compressor set, then execute a unified benchmark/profiling harness over error bounds, data types, dimensional shapes, and dataset classes. Record throughput, compression ratio, achieved bandwidth, arithmetic intensity, occupancy, kernel mix, and selected Nsight counters for later modeling. The baseline set now explicitly includes FZ-GPU in addition to cuSZ and cuSZp.",
+      "success_criteria": [
+        "A reproducible harness installs and runs the main GPU lossy compressors on the workstation.",
+        "Roofline plots and kernel breakdowns are generated for at least one climate dataset and one additional scientific dataset family.",
+        "The measurements reveal stable compressor-specific regimes or feature trends worth modeling."
+      ]
+    },
+    "experiment": {
+      "hypothesis_or_validation_goal": "Validation goal: quantify roofline position and utilization bottlenecks of GPU-based lossy compressors before defining a final runtime-prediction hypothesis.",
+      "dataset_or_data_source": "Primary data source provided by user: Hurricane climate application dataset on the workstation at /home/jwang96/datasets/Hurricane_new/clean-data-Jinyang. Additional candidate datasets are public SDRBench-style fields such as CESM, HACC, NYX, and EXAALT if later mirrored inside the project or referenced on the workstation.",
+      "method_or_protocol": "Benchmark cuSZ, cuSZp, FZ-GPU, zfp CUDA backend, and MGARD-X/MGARD-GPU where buildable. Sweep compressor mode, error bound, dimensionality metadata, and input array size. Measure both end-to-end behavior and Nsight Compute kernel metrics using SpeedOfLight_RooflineChart, LaunchStats, Occupancy, and MemoryWorkloadAnalysis. Keep runs warm-started and repeated; separate installation, functional validation, timing, and profiling passes.",
+      "evaluation_plan": "For each run, capture compression/decompression throughput, compression ratio, achieved bandwidth, arithmetic intensity, occupancy, per-kernel contribution, and launch statistics. Compare end-to-end throughput against theoretical DRAM bandwidth and roofline ceilings on RTX 6000 Ada. Stratify analysis by dataset, precision, dimensionality, and error bound."
+    },
+    "publication": {
+      "paper_outline": "Potential paper arc: motivation for online selection of GPU scientific lossy compression, unified roofline methodology, workstation-based empirical characterization, and implications for prediction features. Final narrative deferred until experimental evidence exists.",
+      "figures_tables_plan": "Planned figures: hardware roofline with per-kernel points, stacked kernel-time breakdowns, throughput-vs-error-bound curves, achieved-bandwidth vs arithmetic-intensity scatter, occupancy distributions, and dataset sensitivity tables.",
+      "artifact_plan": "Release scripts for installation, dataset manifesting, benchmark orchestration, profiler collection, CSV summaries, and plotting configuration. Include workstation setup notes and exact compressor revisions used.",
+      "submission_checklist": [
+        "Freeze compressor versions and compiler/toolkit versions",
+        "Include hardware specification and clock/power settings",
+        "Provide reproducibility scripts and raw summary tables",
+        "Document dataset provenance and dimensional metadata"
+      ]
+    },
+    "promotion": {
+      "slide_outline": "Problem motivation -> compressor landscape -> experimental protocol -> roofline observations -> implications for online selection.",
+      "deck_style": "Systems/HPC conference style with dense but readable plots and explicit hardware context.",
+      "tts_config": "",
+      "video_assembly_plan": "Optional after paper draft exists.",
+      "homepage_plan": "Host benchmark scripts, artifact links, plots, and concise methodological notes."
+    }
+  },
+  "pipeline": {
+    "version": "1.1",
+    "mode": "plan",
+    "startStage": "survey",
+    "stages": {
+      "survey": {
+        "required_elements": [
+          "sections.survey.literature_scope",
+          "sections.survey.synthesis_summary"
+        ],
+        "optional_elements": [
+          "sections.survey.key_references",
+          "sections.survey.open_gaps"
+        ],
+        "quality_gate": [
+          "Compressor set, profiling toolchain, and hardware target are explicitly scoped",
+          "The literature summary identifies at least two measurable gaps that the benchmark harness will test"
+        ],
+        "task_blueprints": [
+          {
+            "id": "survey_collect_references",
+            "title": "Collect papers and official repos for GPU scientific lossy compressors",
+            "description": "Assemble the canonical paper and repository set for cuSZ, cuSZp, zfp CUDA, MGARD, and related profiling methodology.",
+            "taskType": "exploration",
+            "recommended_skills": [
+              "academic-researcher"
+            ]
+          },
+          {
+            "id": "survey_summarize_gaps",
+            "title": "Synthesize bottleneck hypotheses and measurement gaps",
+            "description": "Summarize what prior work says about throughput, kernel structure, and likely bottlenecks, then identify what must be measured on RTX 6000 Ada.",
+            "taskType": "analysis",
+            "recommended_skills": [
+              "academic-researcher",
+              "inno-idea-generation"
+            ]
+          }
+        ],
+        "recommended_skills": [
+          "academic-researcher",
+          "inno-idea-generation"
+        ]
+      },
+      "ideation": {
+        "required_elements": [
+          "sections.ideation.research_goal",
+          "sections.ideation.problem_framing"
+        ],
+        "optional_elements": [
+          "sections.ideation.evidence_plan",
+          "sections.ideation.success_criteria"
+        ],
+        "quality_gate": [
+          "The project has a credible path from roofline measurements to a publishable systems claim",
+          "Success criteria are operational and measurable on the target workstation"
+        ],
+        "task_blueprints": [
+          {
+            "id": "ideation_explore_directions",
+            "title": "Explore claim-worthy directions emerging from roofline analysis",
+            "description": "Brainstorm possible contribution angles such as regime classification, feature selection for runtime prediction, or architecture-sensitive compressor selection.",
+            "taskType": "exploration",
+            "recommended_skills": [
+              "inno-idea-generation"
+            ]
+          },
+          {
+            "id": "ideation_select_direction",
+            "title": "Select the most defensible post-measurement research direction",
+            "description": "Compare candidate directions against novelty, feasibility, and likelihood of producing a systems-paper contribution.",
+            "taskType": "analysis",
+            "recommended_skills": [
+              "inno-idea-generation"
+            ]
+          }
+        ],
+        "recommended_skills": [
+          "inno-idea-generation"
+        ]
+      },
+      "experiment": {
+        "required_elements": [
+          "sections.experiment.hypothesis_or_validation_goal",
+          "sections.experiment.method_or_protocol",
+          "sections.experiment.evaluation_plan"
+        ],
+        "optional_elements": [
+          "sections.experiment.dataset_or_data_source"
+        ],
+        "quality_gate": [
+          "The benchmark matrix spans compressors, error bounds, and dataset conditions needed to separate compute and memory effects",
+          "Profiling outputs are structured so they can be aggregated into roofline plots and downstream prediction features"
+        ],
+        "task_blueprints": [
+          {
+            "id": "experiment_define_protocol",
+            "title": "Implement workstation setup, installation, and benchmark orchestration",
+            "description": "Build scripts and configuration for installing GPU compressors, validating execution, and collecting timing plus Nsight Compute results on RTX 6000 Ada.",
+            "taskType": "implementation",
+            "recommended_skills": [
+              "inno-code-survey"
+            ]
+          },
+          {
+            "id": "experiment_run_analysis",
+            "title": "Run roofline-oriented baseline analysis and summarize bottlenecks",
+            "description": "Execute the benchmark matrix, produce CSV summaries, and identify whether kernels or end-to-end flows appear compute-bound, memory-bound, or overhead-bound.",
+            "taskType": "analysis",
+            "recommended_skills": [
+              "academic-researcher"
+            ]
+          }
+        ],
+        "recommended_skills": [
+          "academic-researcher"
+        ]
+      },
+      "publication": {
+        "required_elements": [
+          "sections.publication.paper_outline",
+          "sections.publication.submission_checklist"
+        ],
+        "optional_elements": [
+          "sections.publication.figures_tables_plan",
+          "sections.publication.artifact_plan"
+        ],
+        "quality_gate": [
+          "The paper structure cleanly separates empirical characterization from later prediction modeling",
+          "Figures and artifacts are sufficient for an SC/IPDPS-style reproducibility appendix"
+        ],
+        "task_blueprints": [
+          {
+            "id": "publication_outline_to_draft",
+            "title": "Convert measured insights into a systems-paper outline",
+            "description": "Draft the introduction, methodology, and results structure once enough evidence exists.",
+            "taskType": "writing",
+            "recommended_skills": [
+              "academic-researcher"
+            ]
+          },
+          {
+            "id": "publication_finalize_artifacts",
+            "title": "Finalize figures, tables, and reproducibility package",
+            "description": "Prepare paper-ready plots, benchmark tables, and artifact documentation.",
+            "taskType": "writing",
+            "recommended_skills": [
+              "academic-researcher"
+            ]
+          }
+        ],
+        "recommended_skills": [
+          "academic-researcher"
+        ]
+      },
+      "promotion": {
+        "required_elements": [
+          "sections.promotion.slide_outline"
+        ],
+        "optional_elements": [
+          "sections.promotion.deck_style",
+          "sections.promotion.tts_config",
+          "sections.promotion.video_assembly_plan",
+          "sections.promotion.homepage_plan"
+        ],
+        "quality_gate": [
+          "Promotional assets preserve the distinction between measured facts and future modeling plans",
+          "Slides and homepage clearly communicate hardware context and benchmark reproducibility"
+        ],
+        "task_blueprints": [
+          {
+            "id": "promotion_draft_outline",
+            "title": "Draft talk outline for roofline characterization results",
+            "description": "Create a short talk or deck outline once benchmark results stabilize.",
+            "taskType": "scripting",
+            "recommended_skills": [
+              "academic-researcher"
+            ]
+          },
+          {
+            "id": "promotion_prepare_homepage",
+            "title": "Prepare project page content for benchmark artifacts",
+            "description": "Package benchmark context, plots, and code links for external sharing.",
+            "taskType": "delivery",
+            "recommended_skills": [
+              "academic-researcher"
+            ]
+          }
+        ],
+        "recommended_skills": [
+          "academic-researcher"
+        ]
+      }
+    }
+  }
+}

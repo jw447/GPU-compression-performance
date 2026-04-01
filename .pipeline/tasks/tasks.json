@@ -1,0 +1,359 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Refine survey literature scope",
+        "description": "Confirm the compressor set, profiling toolchain, and hardware boundary for the measurement-first study.",
+        "status": "done",
+        "stage": "survey",
+        "priority": "high",
+        "dependencies": [],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.survey.literature_scope"
+        ],
+        "suggestedSkills": [
+          "inno-pipeline-planner"
+        ],
+        "sourceBlueprintId": "required_element.sections.survey.literature_scope",
+        "nextActionPrompt": "Task: Refine survey literature scope\nStage: survey\nUser inputs: GPU lossy compressors on RTX 6000 Ada, focus on roofline characterization before finalizing the research question.\nSuggested skills: inno-pipeline-planner\nQuality gate: Compressor set, profiling toolchain, and hardware target are explicitly scoped\nStage guidance: Keep scope concrete and measurement-first, then write updates back to .pipeline/docs/research_brief.json.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 2,
+        "title": "Refine survey synthesis summary",
+        "description": "Turn the initial intake into a concise rationale for why roofline measurements come before a final predictive-model hypothesis.",
+        "status": "done",
+        "stage": "survey",
+        "priority": "high",
+        "dependencies": [],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.survey.synthesis_summary"
+        ],
+        "suggestedSkills": [
+          "inno-pipeline-planner"
+        ],
+        "sourceBlueprintId": "required_element.sections.survey.synthesis_summary",
+        "nextActionPrompt": "Task: Refine survey synthesis summary\nStage: survey\nUser inputs: user wants to determine whether the project has enough substance by running roofline experiments first.\nSuggested skills: inno-pipeline-planner\nQuality gate: The literature summary identifies at least two measurable gaps that the benchmark harness will test\nStage guidance: Tie the summary to measurable deliverables, then write updates back to .pipeline/docs/research_brief.json.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 3,
+        "title": "Collect papers and official repos for GPU scientific lossy compressors",
+        "description": "Assemble the canonical paper and repository set for cuSZ, cuSZp, zfp CUDA, MGARD, and related profiling methodology.",
+        "status": "done",
+        "stage": "survey",
+        "priority": "high",
+        "dependencies": [],
+        "taskType": "exploration",
+        "inputsNeeded": [
+          "sections.survey.key_references"
+        ],
+        "suggestedSkills": [
+          "academic-researcher"
+        ],
+        "sourceBlueprintId": "survey_collect_references",
+        "nextActionPrompt": "Task: Collect papers and official repos for GPU scientific lossy compressors\nStage: survey\nUser inputs: cuSZ, cuSZp, zfp, MGARD, Nsight Compute.\nSuggested skills: academic-researcher\nQuality gate: Compressor set, profiling toolchain, and hardware target are explicitly scoped\nStage guidance: Prefer primary papers and official repositories, then write updates back to .pipeline/docs/research_brief.json.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 4,
+        "title": "Synthesize bottleneck hypotheses and measurement gaps",
+        "description": "Summarize what prior work says about throughput, kernel structure, and likely bottlenecks, then identify what must be measured on RTX 6000 Ada.",
+        "status": "pending",
+        "stage": "survey",
+        "priority": "high",
+        "dependencies": [
+          3
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.survey.open_gaps",
+          "sections.survey.synthesis_summary"
+        ],
+        "suggestedSkills": [
+          "academic-researcher",
+          "inno-idea-generation"
+        ],
+        "sourceBlueprintId": "survey_summarize_gaps",
+        "nextActionPrompt": "Task: Synthesize bottleneck hypotheses and measurement gaps\nStage: survey\nUser inputs: focus on compute-bound vs memory-bound behavior, kernel breakdown, arithmetic intensity, and occupancy on RTX 6000 Ada.\nSuggested skills: academic-researcher, inno-idea-generation\nQuality gate: The literature summary identifies at least two measurable gaps that the benchmark harness will test\nStage guidance: Turn literature and repo inspection into explicit measurement questions and artifact updates.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 5,
+        "title": "Review survey stage quality gate",
+        "description": "Check that the scoped literature and identified gaps are concrete enough to justify the benchmark study.",
+        "status": "pending",
+        "stage": "survey",
+        "priority": "medium",
+        "dependencies": [
+          4
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "pipeline.stages.survey.quality_gate"
+        ],
+        "suggestedSkills": [
+          "academic-researcher"
+        ],
+        "sourceBlueprintId": "quality_gate.survey",
+        "nextActionPrompt": "Task: Review survey stage quality gate\nStage: survey\nUser inputs: current scoped compressor set and initial literature synthesis.\nSuggested skills: academic-researcher\nQuality gate: Compressor set, profiling toolchain, and hardware target are explicitly scoped; The literature summary identifies at least two measurable gaps that the benchmark harness will test\nStage guidance: Confirm readiness to move from survey to ideation-driven claim shaping.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 6,
+        "title": "Refine ideation research goal",
+        "description": "Make the measurement-first goal explicit without forcing a final paper claim too early.",
+        "status": "done",
+        "stage": "ideation",
+        "priority": "high",
+        "dependencies": [
+          5
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.ideation.research_goal"
+        ],
+        "suggestedSkills": [
+          "inno-pipeline-planner"
+        ],
+        "sourceBlueprintId": "required_element.sections.ideation.research_goal",
+        "nextActionPrompt": "Task: Refine ideation research goal\nStage: ideation\nUser inputs: decide whether roofline characterization is enough to motivate a later runtime model.\nSuggested skills: inno-pipeline-planner\nQuality gate: The project has a credible path from roofline measurements to a publishable systems claim\nStage guidance: Keep the goal falsifiable and tied to experiments.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 7,
+        "title": "Refine ideation problem framing",
+        "description": "State why roofline characterization is the immediate next step and what decisions it will enable.",
+        "status": "done",
+        "stage": "ideation",
+        "priority": "high",
+        "dependencies": [
+          5
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.ideation.problem_framing"
+        ],
+        "suggestedSkills": [
+          "inno-pipeline-planner"
+        ],
+        "sourceBlueprintId": "required_element.sections.ideation.problem_framing",
+        "nextActionPrompt": "Task: Refine ideation problem framing\nStage: ideation\nUser inputs: measurement-first study on Ada GPU before locking a core hypothesis.\nSuggested skills: inno-pipeline-planner\nQuality gate: Success criteria are operational and measurable on the target workstation\nStage guidance: Tie the framing to what the harness will collect and what it will rule in or out.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 8,
+        "title": "Explore claim-worthy directions emerging from roofline analysis",
+        "description": "Brainstorm possible contribution angles such as regime classification, feature selection for runtime prediction, or architecture-sensitive compressor selection.",
+        "status": "pending",
+        "stage": "ideation",
+        "priority": "medium",
+        "dependencies": [
+          6,
+          7
+        ],
+        "taskType": "exploration",
+        "inputsNeeded": [
+          "sections.ideation.evidence_plan",
+          "sections.ideation.success_criteria"
+        ],
+        "suggestedSkills": [
+          "inno-idea-generation"
+        ],
+        "sourceBlueprintId": "ideation_explore_directions",
+        "nextActionPrompt": "Task: Explore claim-worthy directions emerging from roofline analysis\nStage: ideation\nUser inputs: roofline plots, throughput breakdowns, and later runtime-model ambition.\nSuggested skills: inno-idea-generation\nQuality gate: The project has a credible path from roofline measurements to a publishable systems claim\nStage guidance: Generate a small set of plausible research directions grounded in the upcoming measurements.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 9,
+        "title": "Select the most defensible post-measurement research direction",
+        "description": "Compare candidate directions against novelty, feasibility, and likelihood of producing a systems-paper contribution.",
+        "status": "pending",
+        "stage": "ideation",
+        "priority": "medium",
+        "dependencies": [
+          8
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.ideation.success_criteria"
+        ],
+        "suggestedSkills": [
+          "inno-idea-generation"
+        ],
+        "sourceBlueprintId": "ideation_select_direction",
+        "nextActionPrompt": "Task: Select the most defensible post-measurement research direction\nStage: ideation\nUser inputs: brainstormed contribution angles and project constraints.\nSuggested skills: inno-idea-generation\nQuality gate: Success criteria are operational and measurable on the target workstation\nStage guidance: Prefer directions that can be supported by the benchmark harness you are building now.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 10,
+        "title": "Review ideation stage quality gate",
+        "description": "Check that the planned measurement campaign can plausibly lead to a contribution-worthy study.",
+        "status": "pending",
+        "stage": "ideation",
+        "priority": "medium",
+        "dependencies": [
+          9
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "pipeline.stages.ideation.quality_gate"
+        ],
+        "suggestedSkills": [
+          "inno-idea-generation"
+        ],
+        "sourceBlueprintId": "quality_gate.ideation",
+        "nextActionPrompt": "Task: Review ideation stage quality gate\nStage: ideation\nUser inputs: current research goal, framing, and success criteria.\nSuggested skills: inno-idea-generation\nQuality gate: The project has a credible path from roofline measurements to a publishable systems claim; Success criteria are operational and measurable on the target workstation\nStage guidance: Confirm readiness to commit effort to implementation and data collection.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 11,
+        "title": "Refine experiment validation goal",
+        "description": "Lock in the immediate validation goal for the benchmark harness.",
+        "status": "done",
+        "stage": "experiment",
+        "priority": "high",
+        "dependencies": [
+          10
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.experiment.hypothesis_or_validation_goal"
+        ],
+        "suggestedSkills": [
+          "inno-pipeline-planner"
+        ],
+        "sourceBlueprintId": "required_element.sections.experiment.hypothesis_or_validation_goal",
+        "nextActionPrompt": "Task: Refine experiment validation goal\nStage: experiment\nUser inputs: quantify roofline position and utilization bottlenecks before defining a final runtime-prediction hypothesis.\nSuggested skills: inno-pipeline-planner\nQuality gate: The benchmark matrix spans compressors, error bounds, and dataset conditions needed to separate compute and memory effects\nStage guidance: Keep the validation goal measurement-oriented and implementation-ready.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 12,
+        "title": "Refine experiment method and protocol",
+        "description": "Record the workstation setup, compressors, metrics, and profiling protocol in executable form.",
+        "status": "done",
+        "stage": "experiment",
+        "priority": "high",
+        "dependencies": [
+          10
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.experiment.method_or_protocol"
+        ],
+        "suggestedSkills": [
+          "inno-pipeline-planner"
+        ],
+        "sourceBlueprintId": "required_element.sections.experiment.method_or_protocol",
+        "nextActionPrompt": "Task: Refine experiment method and protocol\nStage: experiment\nUser inputs: RTX 6000 Ada, Hurricane dataset path, Nsight Compute metrics, compressor installation requirement.\nSuggested skills: inno-pipeline-planner\nQuality gate: Profiling outputs are structured so they can be aggregated into roofline plots and downstream prediction features\nStage guidance: Turn protocol text into a concrete harness specification and write updates back to .pipeline/docs/research_brief.json.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 13,
+        "title": "Refine experiment evaluation plan",
+        "description": "Specify the metrics, aggregation strategy, and result structure for later modeling.",
+        "status": "done",
+        "stage": "experiment",
+        "priority": "high",
+        "dependencies": [
+          10
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.experiment.evaluation_plan"
+        ],
+        "suggestedSkills": [
+          "inno-pipeline-planner"
+        ],
+        "sourceBlueprintId": "required_element.sections.experiment.evaluation_plan",
+        "nextActionPrompt": "Task: Refine experiment evaluation plan\nStage: experiment\nUser inputs: throughput, compression ratio, achieved bandwidth, occupancy, arithmetic intensity, kernel breakdown, and related metrics.\nSuggested skills: inno-pipeline-planner\nQuality gate: Profiling outputs are structured so they can be aggregated into roofline plots and downstream prediction features\nStage guidance: Define outputs that support both plots and later regression or classification models.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 14,
+        "title": "Implement workstation setup, installation, and benchmark orchestration",
+        "description": "Build scripts and configuration for installing GPU compressors, validating execution, and collecting timing plus Nsight Compute results on RTX 6000 Ada.",
+        "status": "in_progress",
+        "stage": "experiment",
+        "priority": "high",
+        "dependencies": [
+          11,
+          12,
+          13
+        ],
+        "taskType": "implementation",
+        "inputsNeeded": [
+          "sections.experiment.dataset_or_data_source",
+          "sections.experiment.method_or_protocol"
+        ],
+        "suggestedSkills": [
+          "academic-researcher"
+        ],
+        "sourceBlueprintId": "experiment_define_protocol",
+        "nextActionPrompt": "Task: Implement workstation setup, installation, and benchmark orchestration\nStage: experiment\nUser inputs: RTX 6000 Ada, Hurricane dataset path on workstation, compressor set, metrics, and roofline profiling requirement.\nSuggested skills: academic-researcher\nQuality gate: The benchmark matrix spans compressors, error bounds, and dataset conditions needed to separate compute and memory effects; Profiling outputs are structured so they can be aggregated into roofline plots and downstream prediction features\nStage guidance: Produce executable local scripts, configs, and documentation, then write updates back to .pipeline/docs/research_brief.json.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 15,
+        "title": "Run roofline-oriented baseline analysis and summarize bottlenecks",
+        "description": "Execute the benchmark matrix, produce CSV summaries, and identify whether kernels or end-to-end flows appear compute-bound, memory-bound, or overhead-bound.",
+        "status": "pending",
+        "stage": "experiment",
+        "priority": "high",
+        "dependencies": [
+          14
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "sections.experiment.evaluation_plan"
+        ],
+        "suggestedSkills": [
+          "academic-researcher"
+        ],
+        "sourceBlueprintId": "experiment_run_analysis",
+        "nextActionPrompt": "Task: Run roofline-oriented baseline analysis and summarize bottlenecks\nStage: experiment\nUser inputs: benchmark harness outputs and Nsight Compute summaries.\nSuggested skills: academic-researcher\nQuality gate: Profiling outputs are structured so they can be aggregated into roofline plots and downstream prediction features\nStage guidance: Distinguish measurement facts from interpretation and document residual uncertainties.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      },
+      {
+        "id": 16,
+        "title": "Review experiment stage quality gate",
+        "description": "Check whether the benchmark outputs are broad and structured enough to support a paper direction.",
+        "status": "pending",
+        "stage": "experiment",
+        "priority": "medium",
+        "dependencies": [
+          15
+        ],
+        "taskType": "analysis",
+        "inputsNeeded": [
+          "pipeline.stages.experiment.quality_gate"
+        ],
+        "suggestedSkills": [
+          "academic-researcher"
+        ],
+        "sourceBlueprintId": "quality_gate.experiment",
+        "nextActionPrompt": "Task: Review experiment stage quality gate\nStage: experiment\nUser inputs: harness outputs, summary tables, and initial roofline plots.\nSuggested skills: academic-researcher\nQuality gate: The benchmark matrix spans compressors, error bounds, and dataset conditions needed to separate compute and memory effects; Profiling outputs are structured so they can be aggregated into roofline plots and downstream prediction features\nStage guidance: Confirm readiness for paper drafting or for another experiment-design iteration.",
+        "createdAt": "2026-04-01T18:03:21Z",
+        "updatedAt": "2026-04-01T18:03:21Z"
+      }
+    ]
+  }
+}

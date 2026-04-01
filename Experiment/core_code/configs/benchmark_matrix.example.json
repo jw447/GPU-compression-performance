@@ -1,0 +1,92 @@
+{
+  "workstation": {
+    "gpu_name": "NVIDIA RTX 6000 Ada",
+    "cuda_arch": "89",
+    "dataset_root_note": "External workstation paths are referenced here and should be edited locally before running."
+  },
+  "datasets": [
+    {
+      "name": "hurricane_primary",
+      "path": "/home/jwang96/datasets/Hurricane_new/clean-data-Jinyang/example.f32",
+      "dtype": "f32",
+      "dims": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim_mode": 1,
+      "notes": "Replace with a real file and dimensions. dims are ordered as z, y, x placeholders for the wrapper."
+    }
+  ],
+  "error_bounds": [
+    {
+      "mode": "rel",
+      "value": "1e-2"
+    },
+    {
+      "mode": "rel",
+      "value": "1e-3"
+    },
+    {
+      "mode": "rel",
+      "value": "1e-4"
+    }
+  ],
+  "repetitions": {
+    "warmup": 1,
+    "timed": 5
+  },
+  "compressors": [
+    {
+      "name": "cusz",
+      "enabled": true,
+      "binary": "../deps/install/cuSZ/bin/cusz",
+      "modes": [
+        "rel"
+      ]
+    },
+    {
+      "name": "cuszp",
+      "enabled": true,
+      "binary": "../deps/install/cuSZp/bin/cuSZp",
+      "encoding_modes": [
+        "plain",
+        "outlier",
+        "fixed"
+      ]
+    },
+    {
+      "name": "fzgpu",
+      "enabled": true,
+      "binary": "../deps/install/FZ-GPU/bin/fz-gpu",
+      "notes": "FZ-GPU CLI uses positional arguments: input_path dim_x dim_y dim_z error_bound. It currently targets float32 data."
+    },
+    {
+      "name": "zfp",
+      "enabled": true,
+      "binary": "../deps/install/zfp/bin/zfp",
+      "execution_policy": "cuda",
+      "fixed_rate_values": [
+        8,
+        16,
+        32
+      ]
+    },
+    {
+      "name": "mgard",
+      "enabled": false,
+      "binary": "../deps/install/MGARD/bin/mgard-x",
+      "notes": "Enable after verifying the built executable name and supported CLI."
+    }
+  ],
+  "profiling": {
+    "enable_ncu": true,
+    "ncu_sections": [
+      "SpeedOfLight_RooflineChart",
+      "LaunchStats",
+      "Occupancy",
+      "MemoryWorkloadAnalysis"
+    ]
+  }
+}
