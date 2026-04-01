@@ -1,0 +1,1 @@
+/usr/bin/g++ @CMakeFiles/histsp_cu.dir/objects1.rsp -o histsp_cu @CMakeFiles/histsp_cu.dir/linkLibs.rsp -L"/usr/local/cuda/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda/targets/x86_64-linux/lib"

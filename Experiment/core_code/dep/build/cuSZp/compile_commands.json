@@ -1,0 +1,224 @@
+[
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_1D_f32.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_1D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_1D_f32.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_1D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_1D_f64.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_1D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_1D_f64.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_1D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_2D_f32.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_2D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_2D_f32.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_2D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_2D_f64.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_2D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_2D_f64.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_2D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_3D_f32.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_3D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_3D_f32.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_3D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_3D_f64.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_3D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_3D_f64.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_kernels_3D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_utility.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_utility.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_utility.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_utility.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_timer.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_timer.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_timer.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_timer.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_1D_f32.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_1D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_1D_f32.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_1D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_1D_f64.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_1D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_1D_f64.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_1D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_2D_f32.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_2D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_2D_f32.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_2D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_2D_f64.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_2D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_2D_f64.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_2D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_3D_f32.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_3D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_3D_f32.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_3D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_3D_f64.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_3D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_3D_f64.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp_entry_3D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/cuSZp_static.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp.cu -o CMakeFiles/cuSZp_static.dir/src/cuSZp.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp.cu",
+  "output": "CMakeFiles/cuSZp_static.dir/src/cuSZp.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_1D_f32.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_1D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_1D_f32.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_1D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_1D_f64.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_1D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_1D_f64.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_1D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_2D_f32.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_2D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_2D_f32.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_2D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_2D_f64.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_2D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_2D_f64.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_2D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_3D_f32.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_3D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_3D_f32.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_3D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_3D_f64.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_3D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_kernels_3D_f64.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_kernels_3D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_utility.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_utility.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_utility.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_utility.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_timer.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_timer.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_timer.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_timer.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_1D_f32.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_1D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_1D_f32.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_1D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_1D_f64.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_1D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_1D_f64.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_1D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_2D_f32.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_2D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_2D_f32.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_2D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_2D_f64.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_2D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_2D_f64.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_2D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_3D_f32.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_3D_f32.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_3D_f32.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_3D_f32.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_3D_f64.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_3D_f64.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp_entry_3D_f64.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp_entry_3D_f64.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DcuSZp_shared_EXPORTS --options-file CMakeFiles/cuSZp_shared.dir/includes_CUDA.rsp  -Xcompiler -Wno-unused-result -O3 -DNDEBUG -std=c++17 \"--generate-code=arch=compute_89,code=[compute_89,sm_89]\" -Xcompiler=-fPIC -x cu -rdc=true -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp.cu -o CMakeFiles/cuSZp_shared.dir/src/cuSZp.cu.o",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src/cuSZp.cu",
+  "output": "CMakeFiles/cuSZp_shared.dir/src/cuSZp.cu.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp/examples",
+  "command": "/usr/bin/c++  -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include -I/usr/local/cuda/targets/x86_64-linux/include -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include/cuSZp  -Wno-unused-result -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/cuSZp.dir/cuSZp.cpp.o -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp.cpp",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp.cpp",
+  "output": "examples/CMakeFiles/cuSZp.dir/cuSZp.cpp.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp/examples",
+  "command": "/usr/bin/c++  -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include -I/usr/local/cuda/targets/x86_64-linux/include -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include/cuSZp  -Wno-unused-result -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/cuSZp_test_f32_1D.dir/cuSZp_test_f32_1D.cpp.o -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f32_1D.cpp",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f32_1D.cpp",
+  "output": "examples/CMakeFiles/cuSZp_test_f32_1D.dir/cuSZp_test_f32_1D.cpp.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp/examples",
+  "command": "/usr/bin/c++  -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include -I/usr/local/cuda/targets/x86_64-linux/include -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include/cuSZp  -Wno-unused-result -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/cuSZp_test_f64_1D.dir/cuSZp_test_f64_1D.cpp.o -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f64_1D.cpp",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f64_1D.cpp",
+  "output": "examples/CMakeFiles/cuSZp_test_f64_1D.dir/cuSZp_test_f64_1D.cpp.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp/examples",
+  "command": "/usr/bin/c++  -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include -I/usr/local/cuda/targets/x86_64-linux/include -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include/cuSZp  -Wno-unused-result -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/cuSZp_test_f32_2D.dir/cuSZp_test_f32_2D.cpp.o -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f32_2D.cpp",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f32_2D.cpp",
+  "output": "examples/CMakeFiles/cuSZp_test_f32_2D.dir/cuSZp_test_f32_2D.cpp.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp/examples",
+  "command": "/usr/bin/c++  -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include -I/usr/local/cuda/targets/x86_64-linux/include -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include/cuSZp  -Wno-unused-result -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/cuSZp_test_f64_2D.dir/cuSZp_test_f64_2D.cpp.o -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f64_2D.cpp",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f64_2D.cpp",
+  "output": "examples/CMakeFiles/cuSZp_test_f64_2D.dir/cuSZp_test_f64_2D.cpp.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp/examples",
+  "command": "/usr/bin/c++  -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include -I/usr/local/cuda/targets/x86_64-linux/include -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include/cuSZp  -Wno-unused-result -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/cuSZp_test_f32_3D.dir/cuSZp_test_f32_3D.cpp.o -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f32_3D.cpp",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f32_3D.cpp",
+  "output": "examples/CMakeFiles/cuSZp_test_f32_3D.dir/cuSZp_test_f32_3D.cpp.o"
+},
+{
+  "directory": "/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZp/examples",
+  "command": "/usr/bin/c++  -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include -I/usr/local/cuda/targets/x86_64-linux/include -I/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include/cuSZp  -Wno-unused-result -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/cuSZp_test_f64_3D.dir/cuSZp_test_f64_3D.cpp.o -c /home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f64_3D.cpp",
+  "file": "/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/examples/cuSZp_test_f64_3D.cpp",
+  "output": "examples/CMakeFiles/cuSZp_test_f64_3D.dir/cuSZp_test_f64_3D.cpp.o"
+}
+]

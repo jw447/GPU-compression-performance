@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/lrz_seq.dir/src/test_lrz.seq.cc.o -o lrz_seq  -Wl,-rpath,/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/cuSZ ../libpsz_seq_core.so 

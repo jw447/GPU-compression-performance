@@ -1,0 +1,1 @@
+-I"/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/src" -I"/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include" -I"/home/jwang96/GPU-compression-performance/Experiment/core_code/third_party/cuSZp/include/cuSZp" -isystem "/usr/local/cuda/targets/x86_64-linux/include"

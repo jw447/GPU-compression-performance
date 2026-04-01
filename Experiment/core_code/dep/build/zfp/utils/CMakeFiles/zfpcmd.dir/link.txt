@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/zfpcmd.dir/zfp.c.o -o ../bin/zfp  -Wl,-rpath,/home/jwang96/GPU-compression-performance/Experiment/core_code/dep/build/zfp/lib:: ../lib/libzfp.so.1.0.1 -lm 

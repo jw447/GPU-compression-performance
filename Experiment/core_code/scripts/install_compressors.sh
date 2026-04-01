@@ -77,17 +77,43 @@ configure_build_install() {
   cmake --install "$build"
 }
 
-echo "[1/5] cuSZ"
-clone_or_update https://github.com/szcompressor/cuSZ.git "$SRC_DIR/cuSZ"
-configure_build_install \
-  "$SRC_DIR/cuSZ" \
-  "$PREFIX/build/cuSZ" \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX="$PREFIX/install/cuSZ" \
-  -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCH"
+patch_cuszp_arches() {
+  local cmake_file="$1/CMakeLists.txt"
+  if [[ ! -f "$cmake_file" ]]; then
+    echo "cuSZp CMakeLists.txt not found at $cmake_file" >&2
+    return 1
+  fi
+
+  python3 - "$cmake_file" "$CUDA_ARCH" <<'PY'
+import pathlib
+import re
+import sys
+
+path = pathlib.Path(sys.argv[1])
+arch = sys.argv[2]
+text = path.read_text()
+pattern = r"set\(CMAKE_CUDA_ARCHITECTURES\s+[^\)]*\)"
+replacement = f"set(CMAKE_CUDA_ARCHITECTURES {arch})"
+new_text, n = re.subn(pattern, replacement, text, count=1)
+if n != 1:
+    raise SystemExit(f"Failed to patch CMAKE_CUDA_ARCHITECTURES in {path}")
+path.write_text(new_text)
+print(f"Patched {path} to use CUDA arch {arch}")
+PY
+}
+
+#echo "[1/5] cuSZ"
+#clone_or_update https://github.com/szcompressor/cuSZ.git "$SRC_DIR/cuSZ"
+#configure_build_install \
+#  "$SRC_DIR/cuSZ" \
+#  "$PREFIX/build/cuSZ" \
+#  -DCMAKE_BUILD_TYPE=Release \
+#  -DCMAKE_INSTALL_PREFIX="$PREFIX/install/cuSZ" \
+#  -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCH"
 
 echo "[2/5] cuSZp"
 clone_or_update https://github.com/szcompressor/cuSZp.git "$SRC_DIR/cuSZp"
+patch_cuszp_arches "$SRC_DIR/cuSZp"
 configure_build_install \
   "$SRC_DIR/cuSZp" \
   "$PREFIX/build/cuSZp" \
@@ -95,36 +121,36 @@ configure_build_install \
   -DCMAKE_INSTALL_PREFIX="$PREFIX/install/cuSZp" \
   -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCH"
 
-echo "[3/5] FZ-GPU"
-clone_or_update https://github.com/szcompressor/FZ-GPU.git "$SRC_DIR/FZ-GPU"
-make -C "$SRC_DIR/FZ-GPU" -j"$JOBS"
-mkdir -p "$PREFIX/install/FZ-GPU/bin"
-cp "$SRC_DIR/FZ-GPU/fz-gpu" "$PREFIX/install/FZ-GPU/bin/"
-
-echo "[4/5] zfp"
-clone_or_update https://github.com/LLNL/zfp.git "$SRC_DIR/zfp"
-configure_build_install \
-  "$SRC_DIR/zfp" \
-  "$PREFIX/build/zfp" \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX="$PREFIX/install/zfp" \
-  -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCH" \
-  -DZFP_WITH_CUDA=ON \
-  -DBUILD_TESTING=OFF
-
-echo "[5/5] MGARD (best effort)"
-clone_or_update https://github.com/CODARcode/MGARD.git "$SRC_DIR/MGARD"
-if cmake -S "$SRC_DIR/MGARD" -B "$PREFIX/build/MGARD" \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX="$PREFIX/install/MGARD" \
-  -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCH" \
-  -DMGARD_ENABLE_CUDA=ON \
-  -DMGARD_ENABLE_LEGACY_CUDA=ON >/dev/null 2>&1; then
-  cmake --build "$PREFIX/build/MGARD" -j"$JOBS" || true
-  cmake --install "$PREFIX/build/MGARD" || true
-else
-  echo "MGARD configure step did not match this local checkout; inspect $SRC_DIR/MGARD for the right CMake options."
-fi
+#echo "[3/5] FZ-GPU"
+#clone_or_update https://github.com/szcompressor/FZ-GPU.git "$SRC_DIR/FZ-GPU"
+#make -C "$SRC_DIR/FZ-GPU" -j"$JOBS"
+#mkdir -p "$PREFIX/install/FZ-GPU/bin"
+#cp "$SRC_DIR/FZ-GPU/fz-gpu" "$PREFIX/install/FZ-GPU/bin/"
+#
+#echo "[4/5] zfp"
+#clone_or_update https://github.com/LLNL/zfp.git "$SRC_DIR/zfp"
+#configure_build_install \
+#  "$SRC_DIR/zfp" \
+#  "$PREFIX/build/zfp" \
+#  -DCMAKE_BUILD_TYPE=Release \
+#  -DCMAKE_INSTALL_PREFIX="$PREFIX/install/zfp" \
+#  -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCH" \
+#  -DZFP_WITH_CUDA=ON \
+#  -DBUILD_TESTING=OFF
+#
+#echo "[5/5] MGARD (best effort)"
+#clone_or_update https://github.com/CODARcode/MGARD.git "$SRC_DIR/MGARD"
+#if cmake -S "$SRC_DIR/MGARD" -B "$PREFIX/build/MGARD" \
+#  -DCMAKE_BUILD_TYPE=Release \
+#  -DCMAKE_INSTALL_PREFIX="$PREFIX/install/MGARD" \
+#  -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCH" \
+#  -DMGARD_ENABLE_CUDA=ON \
+#  -DMGARD_ENABLE_LEGACY_CUDA=ON >/dev/null 2>&1; then
+#  cmake --build "$PREFIX/build/MGARD" -j"$JOBS" || true
+#  cmake --install "$PREFIX/build/MGARD" || true
+#else
+#  echo "MGARD configure step did not match this local checkout; inspect $SRC_DIR/MGARD for the right CMake options."
+#fi
 
 cat <<EOF
 Install complete.

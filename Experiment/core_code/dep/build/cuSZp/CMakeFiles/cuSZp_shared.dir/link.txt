@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -shared -Wl,-soname,libcuSZp.so -o libcuSZp.so @CMakeFiles/cuSZp_shared.dir/objects1.rsp CMakeFiles/cuSZp_shared.dir/cmake_device_link.o @CMakeFiles/cuSZp_shared.dir/linkLibs.rsp -L"/usr/local/cuda/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda/targets/x86_64-linux/lib"
